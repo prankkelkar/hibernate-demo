@@ -15,10 +15,10 @@ public class UserController {
     private UserRepository userRepository;
     
     @GetMapping("/test")
-    public ResponseEntity<Void> createAndSaveUser() {
+    public ResponseEntity<String> createAndSaveUser() {
         User user = new User();
         user.setEmail("prasanna@ibm.com");
         userRepository.save(user);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body("Success");
     }
 }
